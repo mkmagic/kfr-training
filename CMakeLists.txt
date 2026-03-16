@@ -212,6 +212,7 @@ endif ()
 option(ENABLE_TESTS "Enable KFR tests" OFF)
 cmake_dependent_option(ENABLE_EXAMPLES "Enable KFR examples" ON "ENABLE_TESTS"
                        OFF)
+option(ENABLE_TRAINING "Enable KFR training exercises" OFF)
 if (CLANG)
     option(KFR_ENABLE_DFT "Enable DFT and related algorithms." ON)
 else ()
@@ -247,6 +248,10 @@ if (CMAKE_ANDROID_ARCH_ABI)
     set(KFR_ENABLE_MULTIARCH
         OFF
         CACHE INTERNAL "" FORCE)
+endif ()
+
+if (ENABLE_TRAINING)
+    add_subdirectory(training)
 endif ()
 
 if (KFR_ENABLE_CAPI_BUILD AND NOT KFR_ENABLE_DFT)

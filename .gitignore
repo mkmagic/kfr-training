@@ -75,6 +75,7 @@ var/
 .installed.cfg
 *.egg
 venv/
+training/.venv/
 
 # Documentation
 docs/update.sh
