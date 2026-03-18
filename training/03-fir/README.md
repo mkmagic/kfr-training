@@ -40,26 +40,12 @@ fir_filter.apply(out, in);
 
 ## Build and run this chapter
 ```bash
-cmake --build build-training --target kfr_training_fir
-```
-
-## Plotting the signal (optional)
-This example uses `plot_save(...)` to write SVG plots before and after filtering.
-It requires Python dependencies from `requirements.txt`:
-
-```bash
-./training/setup-venv.sh
-```
-
-`plot_save(...)` depends on the local `dspplot` package, which the setup script installs.
-
-You can also run the full plot flow with the helper script:
-
-```bash
 ./training/03-fir/run-plots.sh
 ```
 
-Plots are written to `svg/` at the repo root.
+This example uses `plot_save(...)` to write SVG plots before and after filtering.
+
+Plots are written to `build-training/training/svg` at the repo root.
 
 ## Exercises
 1. Change to a highpass filter and compare the output energy.
